@@ -55,7 +55,7 @@
         <div class="first-box-1">
             <h6>Bill To</h6>
             <div class="content-1">
-                <h2>{{$sale->name}}</h2>
+                <h4>{{$sale->name}}</h4>
                 <p>{{$sale->address}}</p>
                 <p>GSTIN:&nbsp;{{$sale->gstno}}</p>
             </div>
@@ -63,7 +63,7 @@
         <div class="second-box-1">
             <h6>Ship To</h6>
             <div class="content-1">
-                <h2>{{$sale->name}}</h2>
+                <h4>{{$sale->name}}</h4>
                 <p>{{$sale->address}}</p>
                 <p>GSTIN:&nbsp;{{$sale->gstno}}</p>
             </div>
@@ -111,22 +111,30 @@
             @endforeach
         </div>
         <div class="item-4">
-            @foreach ($deco['quantity'] as $item)
-                {{$item}}<br>
+            @foreach ($deco['quantity'] as $item => $value)
+            <div id="cal-quantity-{{$item}}">
+                {{$value}}
+            </div>
             @endforeach
         </div>
         <div class="item-5">
-            @foreach ($deco['rate'] as $item)
-                {{$item}}<br>
+            @foreach ($deco['rate'] as $item => $value)
+            <div id="cal-rate-{{$item}}">
+                {{$value}}
+            </div>
             @endforeach
         </div>
         <div class="item-6">
-            @foreach ($deco['tax'] as $item)
-                {{$item}}<br>
+            @foreach ($deco['tax'] as $item => $value)
+                <div id="cal-tax-{{$item}}">
+                    {{$value}}
+                </div>
             @endforeach
         </div>
         <div class="item-7">
-            <h6 id="cal-amt"></h6>
+            @for($i = 0; $i<2; $i++)
+            <h6 id="cal-amt-{{$i}}"></h6>
+            @endfor
         </div>
     </div>
     <div class="description-bottom">
@@ -295,6 +303,36 @@
             a.document.close();
         a.print();
     }
+    calculation();
+    function calculation(){
+        for(let i =0; i<50; i++){
+            var quantity = document.querySelector("#cal-quantity-"+i).innerHTML;
+        console.log(quantity);
+        var rate = document.querySelector("#cal-rate-"+i).innerHTML;
+        console.log(rate);
+        var tax = document.querySelector("#cal-tax-"+i).innerHTML;
+        console.log(tax);
+        var taxD;
+        taxD = tax/100;
+        console.log(taxD);
 
+        var result;
+        var tot1;
+        var tot2;
+
+        tot1 = quantity*rate;
+        console.log(tot1);
+
+        tot2 = tot1*taxD;
+        console.log(tot2);
+
+        result = tot1+tot2;
+
+        console.log(result);
+
+        let amountValue = document.getElementById("cal-amt-"+i);
+        amountValue.innerHTML = result;
+        }
+    }
 </script>
 @endsection
