@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Sale;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class SaleController extends Controller
 {
@@ -37,7 +38,22 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-       $sale = Sale::create($request->all());
+        $data0 = array($request->items);
+        $data1 = array($request->hsn);
+        $data = array_replace($data0, $data1);
+        // + $request->quantity + $request->rate + $request->tax;
+
+        Log::info($data);
+
+        // $sale = Sale::create([
+        //     'name' => $request->name,
+        //     'contact' => $request->contact,
+        //     'address' => $request->address,
+        //     'gstno' => $request->gstno,
+        //     'advancepay' => $request->advancepay,
+        //     'date' => $request->date,
+        //     'description' => $data,
+        // ]);
        return redirect()->route('sale.index')->with('Success',"New Record added Successfully");
     }
 
@@ -86,4 +102,9 @@ class SaleController extends Controller
     {
         //
     }
+
+    public function viewInvoice(Sale $sale){
+        return view('backend.pages.sale.invoice',compact('sale'));
+    }
+
 }

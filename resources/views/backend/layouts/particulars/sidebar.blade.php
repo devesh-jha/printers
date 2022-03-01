@@ -12,7 +12,7 @@
 
         <li>
             <a href="{{route('vendor.index')}}" class=" waves-effect">
-                <i class="ri-calendar-2-line"></i>
+                <i class=" ri-store-3-line"></i>
                 <span>Vendor</span>
             </a>
         </li>
@@ -51,6 +51,12 @@
             <a href="{{route('empsalary.index')}}" class=" waves-effect">
                 <i class="fa fa-inr" style="color: white"></i>
                 <span>Monthly Salery</span>
+            </a>
+        </li>
+        <li>
+            <a href="{{route('sale.index')}}" class=" waves-effect">
+                <i class="fa fa-inr" style="color: white"></i>
+                <span>Sale</span>
             </a>
         </li>
 

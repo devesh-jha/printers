@@ -12,8 +12,8 @@
             <div class="card-body">
 
                 <div style="display: flex; justify-content:center; allign-item:center; margine-bottom:20px; padding:10px">
-                    <h4 class="card-title">All Vendors</h4>
-                    <a href="{{route('vendor.create')}}" class="btn btn-primary" style="margin-left:auto">Add New Vendor</a>
+                    <h4 class="card-title">All sales</h4>
+                    <a href="{{route('sale.create')}}" class="btn btn-primary" style="margin-left:auto">Add New sale</a>
                 </div>
 
 
@@ -31,15 +31,16 @@
 
 
                     <tbody>
-                       @foreach ($vendor as $item)
+                       @foreach ($sale as $item)
                        <tr>
                            <td>{{$item->id}}</td>
                         <td>{{$item->name}}</td>
                         <td>{{$item->address}}</td>
                         <td>{{$item->contact}}</td>
                         <td>
-                            <a href="{{route('vendor.edit',[$item->id])}}" class="btn btn-secondary">Edit</a>
-                            <a href="{{route('vendor.destroy',[$item->id])}}" class="btn btn-danger">Delete</a>
+                            <a href="{{route('sale.view',[$item])}}" class="btn btn-secondary">View invoice</a>
+                            <a href="{{route('sale.edit',[$item->id])}}" class="btn btn-secondary">Edit</a>
+                            <a href="{{route('sale.destroy',[$item->id])}}" class="btn btn-danger">Delete</a>
 
                         </td>
 

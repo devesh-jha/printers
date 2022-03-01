@@ -42,3 +42,4 @@ Route::resource('employee',EmployeeController::class);
 Route::resource('empsalary',EmpsalaryController::class);
 Route::resource('sale',SaleController::class);
 
+Route::get('invoice/{sale:id}', [SaleController::class,'viewInvoice'])->name('sale.view');

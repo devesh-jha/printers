@@ -113,6 +113,12 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
+
+        'printers' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/printers.log'),
+            'level' => 'info',
+        ],
     ],
 
 ];
