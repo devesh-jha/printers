@@ -20,9 +20,13 @@
             </div>
             <div class="content1">
                 <h4>SIDDHI PRINTERS</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus suscipit odit excepturi,
-                    itaque, dolores neque natus voluptatem aperiam asperiores harum a sint molestiae, reprehenderit
-                    iusto voluptate similique optio incidunt quaerat.</p>
+                <p>Gala No.1, Ishwar Nagar,Khair Pada,Virar Phata,
+                    Virar(East), Tal.Vasai, Dist:-Palghar
+                    Email:siddhi778printers@gmail.com
+                    Contact:9323999491/7020982682
+<br>
+                    GSTIN:27AFYPJ5944D2ZY
+                </p>
             </div>
         </div>
         <div class="second-box">
@@ -252,24 +256,25 @@
             </div>
             <div class="sign-name">
                 <h6>Name:</h6>
-                <h6>SIDDHI Printers:</h6>
+                <h6>SIDDHI Printers</h6>
             </div>
             <div class="sign-name">
                 <h6>IFSC Code:</h6>
-                <h6>SIDDHI Printers:</h6>
+                <h6>ABHY0065055</h6>
             </div>
             <div class="sign-name">
                 <h6>Account No:</h6>
-                <h6>SIDDHI Printers:</h6>
+                <h6>092021100000411</h6>
             </div>
             <div class="sign-name">
                 <h6>Bank & Branch:</h6>
-                <h6>SIDDHI Printers:</h6>
+                <h6>Abhyudaya Co-operative Bank, VIRAR</h6>
             </div>
         </div>
         <div class="sign-img">
             <img src="{{asset('assets/images/sign.jpeg')}}" width="150px" alt="">
-            <h6>Autherised Signature</h6>
+            <h6>Autherised Signature for
+                <br> Siddhi Printers</h6>
         </div>
 
     </div>
