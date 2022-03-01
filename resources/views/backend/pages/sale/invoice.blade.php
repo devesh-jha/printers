@@ -1,520 +1,12 @@
 @extends('backend.layouts.master')
 
 @section('css')
-
+<link rel="stylesheet" href="{{asset('assets/css/invoice.css')}}">
 @endsection
 
 @section('content')
-<style>
-    .card {
-        padding: 20px;
-    }
 
-    .header1 {
-        display: flex;
-        /* justify-content: center; */
-        align-items: center
-    }
-
-    .header1 .tax-1 {
-        margin: 0px 10px 10px 0px;
-        font-weight: 800;
-    }
-
-    .header1 .tax-2 {
-        margin: 0px 10px 10px 0px;
-        border: 1px solid black;
-        padding: 5px;
-        color: grey;
-        font-weight: 600;
-    }
-
-    .header-box {
-        display: flex;
-        align-items: center;
-    }
-
-    .header-box .first-box {
-        width: 50%;
-        height: 150px;
-        display: flex;
-        justify-content: center;
-        border: 1px solid black;
-        padding: 5px;
-    }
-
-    .header-box .first-box .img1 {
-        margin-right: 10px;
-    }
-
-    .header-box .second-box {
-        border-right: 1px solid black;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-        width: 50%;
-        height: 150px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-    .header-box-1{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .header-box-1 .first-box-1{
-        border-right: 1px solid black;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        padding: 10px;
-        width: 50%;
-    }
-    .header-box-1 .second-box-1{
-        width: 50%;
-        border-right: 1px solid black;
-        border-bottom: 1px solid black;
-        padding: 10px
-    }
-
-    .description-title{
-        display: flex;
-        align-items: center;
-        width: 100%;
-        background-color: rgb(223, 223, 223);
-    }
-
-    .description-title .item-1{
-        padding: 5px;
-        width: 50px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-title .item-2{
-        font-weight: 900;
-        padding: 5px;
-        width: 400px;
-        padding-left: 10px;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-title .item-3{
-        padding: 5px;
-        width: 196px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-title .item-4{
-        padding: 5px;
-        width: 150px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-title .item-5{
-        padding: 5px;
-        width: 150px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-title .item-6{
-        padding: 5px;
-        width: 150px;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        text-align:center;
-    }
-    .description-title .item-7{
-        padding: 5px;
-        width: 197px;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
-        border-bottom: 1px solid black;
-        text-align:center;
-    }
-
-    .description-content{
-        display: flex;
-        width: 100%;
-        height: 500px;
-    }
-
-    .description-content .item-1{
-        width: 50px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-content .item-2{
-        width: 400px;
-        padding-left: 10px;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-content .item-3{
-        width: 195px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-content .item-4{
-        width: 150px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-content .item-5{
-        width: 150px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-content .item-6{
-        width: 150px;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        text-align:center;
-    }
-    .description-content .item-7{
-        width: 197px;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
-        border-bottom: 1px solid black;
-        text-align:center;
-    }
-
-    .description-bottom{
-        display: flex;
-        align-items: center;
-        width: 100%;
-        background-color: rgb(223, 223, 223);
-    }
-
-    .description-bottom .item-1{
-        padding: 16px 0px 16px 0px;
-        width: 50px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-bottom .item-2{
-        font-weight: 900;
-        padding: 5px;
-        width: 400px;
-        padding-left: 10px;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-bottom .item-3{
-        padding: 16px 0px 16px 0px;
-        width: 196px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-bottom .item-4{
-        padding: 5px;
-        width: 150px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-bottom .item-5{
-        padding: 16px 0px 16px 0px;
-        width: 150px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-bottom .item-6{
-        padding: 5px;
-        width: 150px;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        text-align:center;
-    }
-    .description-bottom .item-7{
-        padding: 5px;
-        width: 197px;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
-        border-bottom: 1px solid black;
-        text-align:center;
-    }
-
-    .description-bottom-1{
-        display: flex;
-        align-items: center;
-        width: 100%;
-    }
-
-    .description-bottom-1 .item-1{
-        padding: 16px 0px 16px 0px;
-        width: 50px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-bottom-1 .item-2{
-        font-weight: 900;
-        padding: 5px;
-        width: 400px;
-        padding-left: 10px;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-bottom-1 .item-3{
-        padding: 16px 0px 16px 0px;
-        width: 196px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-bottom-1 .item-4{
-        padding: 16px 0px 16px 0px;
-        width: 150px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-bottom-1 .item-5{
-        padding: 16px 0px 16px 0px;
-        width: 150px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-bottom-1 .item-6{
-        padding: 16px 0px 16px 0px;
-        width: 150px;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        text-align:center;
-    }
-    .description-bottom-1 .item-7{
-        padding: 5px;
-        width: 197px;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
-        border-bottom: 1px solid black;
-        text-align:center;
-    }
-
-    .description-bottom-2{
-        display: flex;
-        align-items: center;
-        width: 100%;
-    }
-
-    .description-bottom-2 .item-1{
-        padding: 16px 0px 16px 0px;
-        width: 50px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-bottom-2 .item-2{
-        font-weight: 900;
-        padding: 5px;
-        width: 400px;
-        padding-left: 10px;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-bottom-2 .item-3{
-        padding: 16px 0px 16px 0px;
-        width: 196px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-bottom-2 .item-4{
-        padding: 16px 0px 16px 0px;
-        width: 150px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-bottom-2 .item-5{
-        padding: 16px 0px 16px 0px;
-        width: 150px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-bottom-2 .item-6{
-        padding: 16px 0px 16px 0px;
-        width: 150px;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        text-align:center;
-    }
-    .description-bottom-2 .item-7{
-        padding: 5px;
-        width: 197px;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
-        border-bottom: 1px solid black;
-        text-align:center;
-    }
-
-    .description-tax{
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        width: 100%;
-        background-color: rgb(223, 223, 223);
-    }
-
-    .description-tax .item-1{
-        padding: 5px;
-        width: 50px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        border-top: 1px solid black;
-    }
-    .description-tax .item-2{
-        font-weight: 900;
-        padding: 5px;
-        width: 400px;
-        padding-left: 10px;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        border-top: 1px solid black;
-    }
-    .description-tax .item-3{
-        padding: 5px;
-        width: 196px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        border-top: 1px solid black;
-    }
-    .description-tax .item-4{
-        padding: 5px;
-        width: 150px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        border-top: 1px solid black;
-    }
-    .description-tax .item-5{
-        padding: 5px;
-        width: 150px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-tax .item-6{
-        padding: 5px;
-        width: 150px;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        border-top: 1px solid black;
-        text-align:center;
-    }
-    .description-tax .item-7{
-        padding: 5px;
-        width: 197px;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
-        border-bottom: 1px solid black;
-        border-top: 1px solid black;
-        text-align:center;
-    }
-
-    .description-tax-1{
-        display: flex;
-        align-items: center;
-        width: 100%;
-    }
-
-    .description-tax-1 .item-1{
-        padding: 5px;
-        width: 50px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-tax-1 .item-2{
-        font-weight: 900;
-        padding: 5px;
-        width: 400px;
-        padding-left: 10px;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-tax-1 .item-3{
-        padding: 5px;
-        width: 196px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-tax-1 .item-4{
-        padding: 5px;
-        width: 150px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-tax-1 .item-5{
-        padding: 5px;
-        width: 150px;
-        text-align:center;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-    }
-    .description-tax-1 .item-6{
-        padding: 5px;
-        width: 150px;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        text-align:center;
-    }
-    .description-tax-1 .item-7{
-        padding: 5px;
-        width: 197px;
-        border-left: 1px solid black;
-        border-right: 1px solid black;
-        border-bottom: 1px solid black;
-        text-align:center;
-    }
-
-    .amt-word{
-        margin-top: 10px;
-        padding: 10px;
-        border: 1px solid black;
-    }
-
-    .sign{
-        border: 1px solid black;
-        border-top:none;
-        display: flex;
-        align-items: center;
-    }
-    .sign-details{
-        width: 100%;
-    }
-    .sign-name{
-        display: flex;
-        width:800px;
-        border-right: 1px solid black;
-    }
-    .sign-name h6{
-        padding: 0px 10px 0px 10px;
-    }
-    .sign-img{
-        width: 250px;
-    }
-</style>
-<div class="card">
+<div class="card" id="invoice">
     {{-- header --}}
     <div class="header1">
         <h6 class="tax-1">Tax Invoice</h6>
@@ -543,13 +35,13 @@
             <div class="invoice-date">
                 <h6>Invoice Date</h6>
                 <h6>
-                    21/05/2021
+                    {{\Carbon\Carbon::parse($sale->created_at)->format('d/m/Y')}}
                 </h6>
             </div>
             <div class="due-date">
                 <h6>Due Date</h6>
                 <h6>
-                    21/05/2021
+                    {{\Carbon\Carbon::parse($sale->date)->format('d/m/Y')}}
                 </h6>
             </div>
         </div>
@@ -559,23 +51,17 @@
         <div class="first-box-1">
             <h6>Bill To</h6>
             <div class="content-1">
-                <h2>SIDDHI PRINTERS</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus suscipit odit excepturi,
-                    itaque,
-                    dolores neque natus voluptatem aperiam asperiores harum a sint molestiae, reprehenderit iusto
-                    voluptate
-                    similique optio incidunt quaerat.</p>
+                <h2>{{$sale->name}}</h2>
+                <p>{{$sale->address}}</p>
+                <p>GSTIN:&nbsp;{{$sale->gstno}}</p>
             </div>
         </div>
         <div class="second-box-1">
-            <h6>Bill To</h6>
+            <h6>Ship To</h6>
             <div class="content-1">
-                <h2>SIDDHI PRINTERS</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus suscipit odit excepturi,
-                    itaque,
-                    dolores neque natus voluptatem aperiam asperiores harum a sint molestiae, reprehenderit iusto
-                    voluptate
-                    similique optio incidunt quaerat.</p>
+                <h2>{{$sale->name}}</h2>
+                <p>{{$sale->address}}</p>
+                <p>GSTIN:&nbsp;{{$sale->gstno}}</p>
             </div>
         </div>
     </div>
@@ -606,25 +92,37 @@
     </div>
     <div class="description-content">
         <div class="item-1">
-            S.No.
+            @for ($i=1; $i<=count($deco['items']); $i++)
+                {{$i}}<br>
+            @endfor
         </div>
         <div class="item-2">
-            Items
+            @foreach ($deco['items'] as $item)
+                {{$item}}<br>
+            @endforeach
         </div>
         <div class="item-3">
-            HSN
+            @foreach ($deco['hsn'] as $item)
+                {{$item}}<br>
+            @endforeach
         </div>
         <div class="item-4">
-            QTY
+            @foreach ($deco['quantity'] as $item)
+                {{$item}}<br>
+            @endforeach
         </div>
         <div class="item-5">
-            Rate
+            @foreach ($deco['rate'] as $item)
+                {{$item}}<br>
+            @endforeach
         </div>
         <div class="item-6">
-            TAX
+            @foreach ($deco['tax'] as $item)
+                {{$item}}<br>
+            @endforeach
         </div>
         <div class="item-7">
-            Amount
+            <h6 id="cal-amt"></h6>
         </div>
     </div>
     <div class="description-bottom">
@@ -750,7 +248,7 @@
     <div class="sign">
         <div class="sign-details">
             <div class="sign-name">
-            <h6>Bank Details</h6>
+                <h6>Bank Details</h6>
             </div>
             <div class="sign-name">
                 <h6>Name:</h6>
@@ -775,11 +273,23 @@
         </div>
 
     </div>
-
-
+    <div class="button">
+        <button class="btn btn-success" type="submit" onclick="printDiv()">Print</button>
+    </div>
 </div>
 @endsection
 
 @section('scripts')
+<script>
+    function printDiv() {
+        var divContents = document.getElementById("invoice").innerHTML;
+        var btn = document.querySelector(".button");
+        var a = window.open('', '', 'height=2000, width=1000');
+        a.document.write('<link rel="stylesheet" href="assets/css/invoice.css">');
+        a.document.write(divContents);
+            a.document.close();
+        a.print();
+    }
 
+</script>
 @endsection

@@ -38,12 +38,38 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        $data0 = array($request->items);
-        $data1 = array($request->hsn);
-        $data = array_replace($data0, $data1);
-        // + $request->quantity + $request->rate + $request->tax;
+        Log::info("start");
 
-        Log::info($data);
+        $myarr['items'] = $request->items;
+        $myarr['hsn'] = $request->hsn;
+        $myarr['quantity'] = $request->quantity;
+        $myarr['rate'] = $request->rate;
+        $myarr['tax'] = $request->tax;
+        Log::info("arrmerged");
+
+        $data = json_encode($myarr);
+        // $data1 = json_decode($data);
+        // Log::info($data);
+
+        // $data1 = json_decode($data);
+
+        // Log::info($data1);
+
+        Log::info("start saving");
+        $sale = new Sale();
+        $sale->name = $request->name;
+        $sale->contact = $request->contact;
+        $sale->address = $request->address;
+        $sale->gstno = $request->gstno;
+        $sale->advancepay = $request->advancepay;
+        $sale->date = $request->date;
+        Log::info("array element");
+
+        $sale->description = $data;
+        Log::info("arry element end");
+
+        $sale->save();
+        Log::info("saved");
 
         // $sale = Sale::create([
         //     'name' => $request->name,
@@ -52,7 +78,7 @@ class SaleController extends Controller
         //     'gstno' => $request->gstno,
         //     'advancepay' => $request->advancepay,
         //     'date' => $request->date,
-        //     'description' => $data,
+        //     'description' => $data1,
         // ]);
        return redirect()->route('sale.index')->with('Success',"New Record added Successfully");
     }
@@ -104,7 +130,13 @@ class SaleController extends Controller
     }
 
     public function viewInvoice(Sale $sale){
-        return view('backend.pages.sale.invoice',compact('sale'));
+        $allData = Sale::where('id',"=",$sale->id)->get();
+        foreach($allData as $item){
+            $desc = $item->description;
+        }
+        $deco = json_decode($desc, true);
+        Log::info($deco);
+        return view('backend.pages.sale.invoice',compact(['sale','deco']));
     }
 
 }

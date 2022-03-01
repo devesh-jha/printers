@@ -12,17 +12,17 @@
                 <div class="row">
 
 
-                    {{-- <div class="row mb-3">
+                    <div class="row mb-3">
                         <label for="example-text-input" class="col-sm-2 col-form-label">Enter Customer Name</label>
                         <div class="col-sm-10">
                             <input class="form-control" type="text" placeholder="Enter Customer Name"
-                                id="example-text-input" name="name" required>
+                                 name="name" required>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="example-text-input" class="col-sm-2 col-form-label">Contact Number</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text" placeholder="Enter Customer Name"
+                            <input class="form-control" type="number" placeholder="+91 1234567890"
                                 id="example-text-input" name="contact" required>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                             <input class="form-control" type="date" placeholder="Enter Customer Name"
                                 id="example-text-input" name="date" required>
                         </div>
-                    </div> --}}
+                    </div>
 
                     <div class="row mb-3">
                         <div class="d-flex">
