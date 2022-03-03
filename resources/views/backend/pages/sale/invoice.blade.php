@@ -33,7 +33,7 @@
             <div class="invoice-no">
                 <h6>Invoice No</h6>
                 <h6>
-                    SP/064
+                    SP/{{$sale->id}}
                 </h6>
             </div>
             <div class="invoice-date">
@@ -132,7 +132,7 @@
             @endforeach
         </div>
         <div class="item-7">
-            @for($i = 0; $i<2; $i++)
+            @for($i = 0; $i<50; $i++)
             <h6 id="cal-amt-{{$i}}"></h6>
             @endfor
         </div>
@@ -147,16 +147,16 @@
         <div class="item-3">
 
         </div>
-        <div class="item-4">
-            160
+        <div class="item-4" id="totqty">
+
         </div>
         <div class="item-5">
 
         </div>
-        <div class="item-6">
-            Rs. 486
+        <div class="item-6" id="tottax">
+
         </div>
-        <div class="item-7">
+        <div class="item-7" id="totres">
             3186
         </div>
     </div>
@@ -179,8 +179,8 @@
         <div class="item-6">
 
         </div>
-        <div class="item-7">
-            0
+        <div class="item-7" id="advancepay">
+            {{$sale->advancepay}}
         </div>
     </div>
     <div class="description-bottom-2">
@@ -202,60 +202,81 @@
         <div class="item-6">
 
         </div>
-        <div class="item-7">
-            3186
+        <div class="item-7" id="finalamt">
+
         </div>
     </div>
     <div class="description-tax">
         <div class="item-1">
-            S.No.
+            HSN/SAC
         </div>
         <div class="item-2">
-            Items
+            Taxable Value
         </div>
         <div class="item-3">
-            HSN
+            <div class="head-tax">CGST</div>
+            <div class="head-tax-1">
+                <div class="rate-tax">Rate</div>
+                <div class="amt-tax">Amount</div>
+            </div>
         </div>
         <div class="item-4">
-            QTY
+            <div class="head-tax">SGST</div>
+            <div class="head-tax-1">
+                <div class="rate-tax">Rate</div>
+                <div class="amt-tax">Amount</div>
+            </div>
         </div>
         <div class="item-5">
-            Rate
-        </div>
-        <div class="item-6">
-            TAX
-        </div>
-        <div class="item-7">
-            Amount
+            Total Tax Amount
         </div>
     </div>
     <div class="description-tax-1">
         <div class="item-1">
-            S.No.
+            @foreach ($deco['hsn'] as $item)
+                {{$item}}<br>
+            @endforeach
         </div>
         <div class="item-2">
-            Items
+            @for($i = 0; $i<50; $i++)
+            <h6 id="cal-amt-1-{{$i}}"></h6>
+            @endfor
         </div>
         <div class="item-3">
-            HSN
+            <div class="head-tax-2">
+                @for($i = 0; $i<20; $i++)
+                <div id="rate-tax-1-{{$i}}"></div>
+                @endfor
+            </div>
+            <div class="head-tax-2">
+                @for($i = 0; $i<20; $i++)
+                <div  id="amt-tax-1-{{$i}}"></div>
+                @endfor
+            </div>
         </div>
         <div class="item-4">
-            QTY
+            <div class="head-tax-2">
+                @for($i = 0; $i<50; $i++)
+                <div id="rate-tax-2-{{$i}}">
+                </div>
+                @endfor
+            </div>
+            <div class="head-tax-2">
+                @for($i = 0; $i<50; $i++)
+                <div id="amt-tax-2-{{$i}}"></div>
+                @endfor
+            </div>
         </div>
         <div class="item-5">
-            Rate
-        </div>
-        <div class="item-6">
-            TAX
-        </div>
-        <div class="item-7">
-            Amount
+            @for($i = 0; $i<50; $i++)
+            <div id="taxable-val-{{$i}}"></div>
+            @endfor
         </div>
     </div>
 
     <div class="amt-word">
         <h6>Invoice Amount (in words)</h6>
-        <h6>Invoice Amount (in words)</h6>
+        <h6 id="words"></h6>
     </div>
     <div class="sign">
         <div class="sign-details">
@@ -305,34 +326,86 @@
     }
     calculation();
     function calculation(){
-        for(let i =0; i<50; i++){
+        var totQuant = 0;
+        var totTax = 0;
+        var totRes = 0;
+        var advpay = document.querySelector("#advancepay").innerHTML;
+        var finalAmt = 0;
+        for(let i=0; i<50; i++){
             var quantity = document.querySelector("#cal-quantity-"+i).innerHTML;
-        console.log(quantity);
         var rate = document.querySelector("#cal-rate-"+i).innerHTML;
-        console.log(rate);
         var tax = document.querySelector("#cal-tax-"+i).innerHTML;
-        console.log(tax);
+        var taxableVal = document.querySelector("#taxable-val-"+i);
+        var rateTax = document.querySelector("#rate-tax-1-"+i);
+        var rateTaxTwo = document.querySelector("#rate-tax-2-"+i);
+        var amtTax = document.querySelector("#amt-tax-1-"+i);
+        var amtTax1 = document.querySelector("#amt-tax-2-"+i);
         var taxD;
         taxD = tax/100;
-        console.log(taxD);
 
         var result;
         var tot1;
         var tot2;
-
+        var taxbytwo;
         tot1 = quantity*rate;
-        console.log(tot1);
 
         tot2 = tot1*taxD;
-        console.log(tot2);
 
         result = tot1+tot2;
 
-        console.log(result);
+        taxbytwo = tax/2;
+        rateTax.innerHTML=taxbytwo+' %';
 
-        let amountValue = document.getElementById("cal-amt-"+i);
+        var br = document.createElement("br");
+        rateTax.appendChild(br);
+        rateTaxTwo.innerHTML = taxbytwo+' %';
+        amtTax.innerHTML = tot2/2+' Rs/-';
+        amtTax1.innerHTML = tot2/2+' Rs/-';
+
+        var amountValue = document.getElementById("cal-amt-"+i);
         amountValue.innerHTML = result;
+        var amountValue1 = document.getElementById("cal-amt-1-"+i);
+        amountValue1.innerHTML = tot1;
+
+        totQuant = +totQuant + +quantity;
+        var totqty = document.querySelector("#totqty");
+        totqty.innerHTML = totQuant;
+
+        totTax = totTax + tot2;
+        var tottax = document.querySelector("#tottax")
+        tottax.innerHTML = "Rs. "+totTax;
+
+        totRes = totRes + result;
+        var totres = document.querySelector("#totres")
+        totres.innerHTML = "Rs. "+totRes;
+
+        taxableVal.innerHTML = tot2;
+        var finaltaxTot =
+        finalAmt = totRes - advpay;
+        var finalamt = document.querySelector("#finalamt");
+        finalamt.innerHTML = "Rs. "+finalAmt;
+
+
         }
     }
+
+    var a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ','eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
+    var b = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+
+    function inWords (num) {
+        if ((num = num.toString()).length > 9) return 'overflow';
+        n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+        if (!n) return; var str = '';
+        str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'crore ' : '';
+        str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'lakh ' : '';
+        str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'thousand ' : '';
+        str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' : '';
+        str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'only ' : '';
+        return str;
+    }
+    document.querySelector(".advancepay").innerHTML = function () {
+    document.querySelector(".words").innerHTML = inWords(document.querySelector(".advancepay").innerHTML);
+    };
+    console.log(document.querySelector(".advancepay").innerHTML);
 </script>
 @endsection

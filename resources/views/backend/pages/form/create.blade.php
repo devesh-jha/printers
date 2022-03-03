@@ -24,9 +24,9 @@
                     <div class="mb-3">
                         <label>Required</label>
                         <select type="text" class="form-control" id="product"
-                                placeholder="First name" name="product_id" >
+                                placeholder="First name" name="product_id" onchange="myFunction2(this.options[this.selectedIndex])" >
 
-                            </select>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label>Product Name </label>
@@ -35,70 +35,70 @@
                                     parsley-type="text" placeholder="Enter a Product Name"/>
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <label>Sixe</label>
+                    <div class="mb-3" id="size">
+                        <label>Size</label>
                         <div>
                             <input type="text" class="form-control" name="size"
                                     parsley-type="text" placeholder="Enter a valid size"/>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="gsm">
                         <label>GSM</label>
                         <div>
                             <input type="text" class="form-control" name="gsm"
                                     parsley-type="email" placeholder="Enter GSM"/>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="sheets">
                         <label>Sheets</label>
                         <div>
                             <input type="number" class="form-control" name="sheets"
                                     parsley-type="email" placeholder="Enter Sheets"/>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="rfbundle">
                         <label>Ream For Bundle</label>
                         <div>
                             <input type="number" class="form-control" name="rfbundle"
                                     parsley-type="email" placeholder="Enter a Ream For Bundle"/>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="bundle">
                         <label>Total Bundle</label>
                         <div>
                             <input type="number" class="form-control" name="bundle"
                                     parsley-type="email" placeholder="Enter Total Bundle"/>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="price">
                         <label>Total Price</label>
                         <div>
                             <input type="text" class="form-control" name="price"
                                     parsley-type="email" placeholder="Enter Price"/>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="amount_given">
                         <label>Amount Given</label>
                         <div>
                             <input type="text" class="form-control" name="amount_given"
                                     parsley-type="email" placeholder="Enter Total amount Given"/>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="count">
                         <label>Total Count</label>
                         <div>
                             <input type="number" class="form-control" name="count"
                                     parsley-type="email" placeholder="Enter Total Count"/>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="wt_per_box">
                         <label>Weight Per Box</label>
                         <div>
                             <input type="text" class="form-control" name="wt_per_box"
                                     parsley-type="email" placeholder="Enter Weight of One Box"/>
                         </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="thickness">
                         <label>Thickness</label>
                         <div>
                             <input type="text" class="form-control" name="thickness"
@@ -154,16 +154,59 @@
                     dataType: 'json',
                     success: function (result) {
                         $('#product').html('<option value="">Select Product</option>');
-                        console.log(result);
                         $.each(result, function (key, value) {
                             $("#product").append('<option value="' + value
-                                .id + '">' + value.name + '</option>');
+                            .id + '"  id="'+value.name+'" >' + value.name + '</option>');
                         });
-
                     }
                 });
             });
 
         });
+
+        var gsm = document.querySelector("#gsm");
+        var size = document.querySelector("#size");
+        var sheets = document.querySelector("#sheets");
+        var rfbundle = document.querySelector("#rfbundle");
+        var bundle = document.querySelector("#bundle");
+        var price = document.querySelector("#price");
+        var amount_given = document.querySelector("#amount_given");
+        var count = document.querySelector("#count");
+        var wt_per_box = document.querySelector("#wt_per_box");
+        var thickness = document.querySelector("#thickness");
+
+        // if()
+        function myFunction2(selectObject){
+            // var productcolor = document.querySelector("#color");
+            // var productpaper = document.querySelector("#paper");
+            // console.log(productcolor);
+            // console.log(productpaper);
+            var value = selectObject;
+            if(value.text == 'color'){
+                gsm.style.display = "block";
+                size.style.display = "block";
+                sheets.style.display = "block";
+                rfbundle.style.display = "block";
+                bundle.style.display = "block";
+                price.style.display = "block";
+                amount_given.style.display = "block";
+                count.style.display = "block";
+                wt_per_box.style.display = "block";
+                thickness.style.display = "block";
+            }
+            else if(value.text == 'paper'){
+                gsm.style.display = "block";
+                size.style.display = "block";
+                sheets.style.display = "block";
+                rfbundle.style.display = "block";
+                bundle.style.display = "block";
+                price.style.display = "block";
+                amount_given.style.display = "block";
+                count.style.display = "block";
+                wt_per_box.style.display = "block";
+                thickness.style.display = "block";
+            }
+        }
+
     </script>
 @endsection
