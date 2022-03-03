@@ -9,14 +9,14 @@
 <div class="card" id="invoice">
     {{-- header --}}
     <div class="header1">
-        <h6 class="tax-1">Tax Invoice</h6>
-        <h6 class="tax-2">Original For Recipient</h6>
+        <h6 class="tax-1">TAX INVOICE</h6>
+        <h6 class="tax-2">ORIGINAL FOR RECIPIENT</h6>
     </div>
     {{-- header of logo --}}
     <div class="header-box">
         <div class="first-box">
             <div class="img1">
-                <img src="{{asset('assets/images/printers.jpg')}}" width="125px" alt="">
+                <img src="{{asset('assets/images/printers.jpg')}}" width="120px" height="120px" alt="">
             </div>
             <div class="content1">
                 <h4>SIDDHI PRINTERS</h4>
@@ -24,7 +24,7 @@
                     Virar(East), Tal.Vasai, Dist:-Palghar
                     Email:siddhi778printers@gmail.com
                     Contact:9323999491/7020982682
-<br>
+                    <br>
                     GSTIN:27AFYPJ5944D2ZY
                 </p>
             </div>
@@ -96,18 +96,17 @@
     </div>
     <div class="description-content">
         <div class="item-1">
-            @for ($i=1; $i<=count($deco['items']); $i++)
-                {{$i}}<br>
-            @endfor
+            @for ($i=1; $i<=count($deco['items']); $i++) {{$i}}<br>
+                @endfor
         </div>
         <div class="item-2">
             @foreach ($deco['items'] as $item)
-                {{$item}}<br>
+            {{$item}}<br>
             @endforeach
         </div>
         <div class="item-3">
             @foreach ($deco['hsn'] as $item)
-                {{$item}}<br>
+            {{$item}}<br>
             @endforeach
         </div>
         <div class="item-4">
@@ -126,15 +125,15 @@
         </div>
         <div class="item-6">
             @foreach ($deco['tax'] as $item => $value)
-                <div id="cal-tax-{{$item}}">
-                    {{$value}}
-                </div>
+            <div id="cal-tax-{{$item}}">
+                {{$value}}
+            </div>
             @endforeach
         </div>
         <div class="item-7">
-            @for($i = 0; $i<50; $i++)
-            <h6 id="cal-amt-{{$i}}"></h6>
-            @endfor
+            @for($i = 0; $i<50; $i++) <div id="cal-amt-{{$i}}">
+                </div>
+                @endfor
         </div>
     </div>
     <div class="description-bottom">
@@ -183,7 +182,7 @@
             {{$sale->advancepay}}
         </div>
     </div>
-    <div class="description-bottom-2">
+    <div class="description-bottom-1">
         <div class="item-1">
 
         </div>
@@ -234,178 +233,190 @@
     <div class="description-tax-1">
         <div class="item-1">
             @foreach ($deco['hsn'] as $item)
-                {{$item}}<br>
+            {{$item}}<br>
             @endforeach
         </div>
         <div class="item-2">
-            @for($i = 0; $i<50; $i++)
-            <h6 id="cal-amt-1-{{$i}}"></h6>
-            @endfor
+            @for($i = 0; $i<30; $i++) {{-- @if() --}} <div id="cal-amt-1-{{$i}}">
+                </div>
+                {{-- @endif --}}
+                @endfor
         </div>
         <div class="item-3">
             <div class="head-tax-2">
-                @for($i = 0; $i<20; $i++)
-                <div id="rate-tax-1-{{$i}}"></div>
-                @endfor
+                @for($i = 0; $i<20; $i++) <div id="rate-tax-1-{{$i}}">
             </div>
-            <div class="head-tax-2">
-                @for($i = 0; $i<20; $i++)
-                <div  id="amt-tax-1-{{$i}}"></div>
-                @endfor
-            </div>
+            @endfor
         </div>
-        <div class="item-4">
-            <div class="head-tax-2">
-                @for($i = 0; $i<50; $i++)
-                <div id="rate-tax-2-{{$i}}">
-                </div>
-                @endfor
+        <div class="head-tax-2">
+            @for($i = 0; $i<20; $i++) <div id="amt-tax-1-{{$i}}">
             </div>
-            <div class="head-tax-2">
-                @for($i = 0; $i<50; $i++)
-                <div id="amt-tax-2-{{$i}}"></div>
-                @endfor
-            </div>
-        </div>
-        <div class="item-5">
-            @for($i = 0; $i<50; $i++)
-            <div id="taxable-val-{{$i}}"></div>
             @endfor
         </div>
     </div>
+<div class="item-4">
+    <div class="head-tax-2">
+        @for($i = 0; $i<50; $i++) <div id="rate-tax-2-{{$i}}">
+    </div>
+    @endfor
+</div>
+<div class="head-tax-2">
+    @for($i = 0; $i<50; $i++) <div id="amt-tax-2-{{$i}}">
+</div>
+@endfor
+</div>
+</div>
+<div class="item-5">
+    @for($i = 0; $i<50; $i++) <div id="taxable-val-{{$i}}">
+</div>
+@endfor
+</div>
+</div>
 
-    <div class="amt-word">
-        <h6>Invoice Amount (in words)</h6>
-        <h6 id="words"></h6>
-    </div>
-    <div class="sign">
-        <div class="sign-details">
-            <div class="sign-name">
-                <h6>Bank Details</h6>
-            </div>
-            <div class="sign-name">
-                <h6>Name:</h6>
-                <h6>SIDDHI Printers</h6>
-            </div>
-            <div class="sign-name">
-                <h6>IFSC Code:</h6>
-                <h6>ABHY0065055</h6>
-            </div>
-            <div class="sign-name">
-                <h6>Account No:</h6>
-                <h6>092021100000411</h6>
-            </div>
-            <div class="sign-name">
-                <h6>Bank & Branch:</h6>
-                <h6>Abhyudaya Co-operative Bank, VIRAR</h6>
-            </div>
+<div class="amt-word">
+    <h6>Invoice Amount (in words)</h6>
+    <h6 id="words"></h6>
+</div>
+<div class="sign">
+    <div class="sign-details">
+        <div class="sign-name">
+            <h6>Bank Details</h6>
         </div>
-        <div class="sign-img">
-            <img src="{{asset('assets/images/sign.jpeg')}}" width="150px" alt="">
-            <h6>Autherised Signature for
-                <br> Siddhi Printers</h6>
+        <div class="sign-name">
+            <h6>Name:</h6>
+            <h6>SIDDHI Printers</h6>
         </div>
-
+        <div class="sign-name">
+            <h6>IFSC Code:</h6>
+            <h6>ABHY0065055</h6>
+        </div>
+        <div class="sign-name">
+            <h6>Account No:</h6>
+            <h6>092021100000411</h6>
+        </div>
+        <div class="sign-name">
+            <h6>Bank & Branch:</h6>
+            <h6>Abhyudaya Co-operative Bank, VIRAR</h6>
+        </div>
     </div>
-    <div class="button">
-        <button class="btn btn-success" type="submit" onclick="printDiv()">Print</button>
+    <div class="sign-img">
+        <img src="{{asset('assets/images/sign.jpeg')}}" width="150" alt="">
+        <h6>Autherised Signature for
+            <br> Siddhi Printers</h6>
     </div>
+</div>
+<div class="button" id="printbtn">
+    <button class="btn btn-success" type="submit" onclick="printDiv('invoice')">Print</button>
+</div>
 </div>
 @endsection
 
 @section('scripts')
 <script>
-    function printDiv() {
-        var divContents = document.getElementById("invoice").innerHTML;
-        var btn = document.querySelector(".button");
-        var a = window.open('', '', 'height=2000, width=1000');
-        a.document.write('<link rel="stylesheet" href="assets/css/invoice.css">');
-        a.document.write(divContents);
-            a.document.close();
-        a.print();
+    function printDiv(invoice) {
+        var divContents = document.getElementById(invoice).innerHTML;
+        let printBtn = document.querySelector("#printbtn");
+        console.log(printBtn);
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = divContents;
+        printBtn.style.display="none";
+        window.print();
+        document.body.innerHTML = originalContents;
     }
     calculation();
-    function calculation(){
+
+    function calculation() {
         var totQuant = 0;
         var totTax = 0;
         var totRes = 0;
         var advpay = document.querySelector("#advancepay").innerHTML;
         var finalAmt = 0;
-        for(let i=0; i<50; i++){
-            var quantity = document.querySelector("#cal-quantity-"+i).innerHTML;
-        var rate = document.querySelector("#cal-rate-"+i).innerHTML;
-        var tax = document.querySelector("#cal-tax-"+i).innerHTML;
-        var taxableVal = document.querySelector("#taxable-val-"+i);
-        var rateTax = document.querySelector("#rate-tax-1-"+i);
-        var rateTaxTwo = document.querySelector("#rate-tax-2-"+i);
-        var amtTax = document.querySelector("#amt-tax-1-"+i);
-        var amtTax1 = document.querySelector("#amt-tax-2-"+i);
-        var taxD;
-        taxD = tax/100;
+        for (let i = 0; i < 50; i++) {
+            var quantity = document.querySelector("#cal-quantity-" + i).innerHTML;
+            var rate = document.querySelector("#cal-rate-" + i).innerHTML;
+            var tax = document.querySelector("#cal-tax-" + i).innerHTML;
+            var taxableVal = document.querySelector("#taxable-val-" + i);
+            var rateTax = document.querySelector("#rate-tax-1-" + i);
+            var rateTaxTwo = document.querySelector("#rate-tax-2-" + i);
+            var amtTax = document.querySelector("#amt-tax-1-" + i);
+            var amtTax1 = document.querySelector("#amt-tax-2-" + i);
+            var taxD;
+            taxD = tax / 100;
 
-        var result;
-        var tot1;
-        var tot2;
-        var taxbytwo;
-        tot1 = quantity*rate;
+            var result;
+            var tot1;
+            var tot2;
+            var taxbytwo;
+            tot1 = quantity * rate;
 
-        tot2 = tot1*taxD;
+            tot2 = tot1 * taxD;
 
-        result = tot1+tot2;
+            result = tot1 + tot2;
 
-        taxbytwo = tax/2;
-        rateTax.innerHTML=taxbytwo+' %';
+            taxbytwo = tax / 2;
+            rateTax.innerHTML = taxbytwo + ' %';
 
-        var br = document.createElement("br");
-        rateTax.appendChild(br);
-        rateTaxTwo.innerHTML = taxbytwo+' %';
-        amtTax.innerHTML = tot2/2+' Rs/-';
-        amtTax1.innerHTML = tot2/2+' Rs/-';
+            var br = document.createElement("br");
+            rateTax.appendChild(br);
+            rateTaxTwo.innerHTML = taxbytwo + ' %';
+            amtTax.innerHTML = tot2 / 2;
+            amtTax1.innerHTML = tot2 / 2;
 
-        var amountValue = document.getElementById("cal-amt-"+i);
-        amountValue.innerHTML = result;
-        var amountValue1 = document.getElementById("cal-amt-1-"+i);
-        amountValue1.innerHTML = tot1;
+            var amountValue = document.getElementById("cal-amt-" + i);
+            amountValue.innerHTML = result;
+            var amountValue1 = document.getElementById("cal-amt-1-" + i);
+            amountValue1.innerHTML = tot1;
 
-        totQuant = +totQuant + +quantity;
-        var totqty = document.querySelector("#totqty");
-        totqty.innerHTML = totQuant;
 
-        totTax = totTax + tot2;
-        var tottax = document.querySelector("#tottax")
-        tottax.innerHTML = "Rs. "+totTax;
+            totQuant = +totQuant + +quantity;
+            var totqty = document.querySelector("#totqty");
+            totqty.innerHTML = totQuant;
 
-        totRes = totRes + result;
-        var totres = document.querySelector("#totres")
-        totres.innerHTML = "Rs. "+totRes;
+            totTax = totTax + tot2;
+            var tottax = document.querySelector("#tottax")
+            tottax.innerHTML = "Rs. " + totTax;
 
-        taxableVal.innerHTML = tot2;
-        var finaltaxTot =
-        finalAmt = totRes - advpay;
-        var finalamt = document.querySelector("#finalamt");
-        finalamt.innerHTML = "Rs. "+finalAmt;
+            totRes = totRes + result;
+            var totres = document.querySelector("#totres")
+            totres.innerHTML = "Rs. " + totRes;
+
+            taxableVal.innerHTML = tot2;
+            var finaltaxTot =
+                finalAmt = totRes - advpay;
+            var finalamt = document.querySelector("#finalamt");
+            finalamt.innerHTML = "Rs. " + finalAmt;
 
 
         }
     }
 
-    var a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ','eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
-    var b = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+</script>
+<script>
+    var a = ['', 'One ', 'Two ', 'Three ', 'Four ', 'Five ', 'Six ', 'Seven ', 'Eight ', 'Nine ', 'Ten ', 'Eleven ',
+        'Twelve ', 'Thirteen ', 'Fourteen ', 'Fifteen ', 'Sixteen ', 'Seventeen ', 'Eighteen ', 'Nineteen '
+    ];
+    var b = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
 
-    function inWords (num) {
+    function inWords(num) {
         if ((num = num.toString()).length > 9) return 'overflow';
         n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
-        if (!n) return; var str = '';
+        if (!n) return;
+        var str = '';
         str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'crore ' : '';
         str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'lakh ' : '';
         str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'thousand ' : '';
         str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' : '';
-        str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'only ' : '';
+        str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) +
+            'only ' : '';
         return str;
     }
-    document.querySelector(".advancepay").innerHTML = function () {
-    document.querySelector(".words").innerHTML = inWords(document.querySelector(".advancepay").innerHTML);
-    };
-    console.log(document.querySelector(".advancepay").innerHTML);
+
+    NumToWord();
+
+    function NumToWord() {
+        var adpayval = document.querySelector('#advancepay');
+        document.querySelector("#words").innerHTML = inWords(adpayval.innerText);
+    }
+
 </script>
 @endsection

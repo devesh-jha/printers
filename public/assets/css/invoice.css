@@ -1,50 +1,49 @@
 .card {
+    margin: 0px;
     padding: 20px;
+    height: 100%;
+    width: 100%;
 }
 
 .header1 {
     display: flex;
-    /* justify-content: center; */
     align-items: center
 }
 
 .header1 .tax-1 {
-    margin: 0px 10px 10px 0px;
+    margin: 0px 10px 5px 0px;
     font-weight: 800;
 }
 
 .header1 .tax-2 {
-    margin: 0px 10px 10px 0px;
-    border: 1px solid black;
-    padding: 5px;
-    color: grey;
+    margin: 0px 10px 5px 0px;
+    border: 1px solid #848496;
+    padding: 5px ;
+    color: #848496;
     font-weight: 600;
+    border-radius: 3px;
 }
 
 .header-box {
+    border: 1px solid black;
+    height: 13%;
     display: flex;
     align-items: center;
 }
 
 .header-box .first-box {
-    width: 50%;
-    height: 150px;
     display: flex;
     justify-content: center;
-    border: 1px solid black;
+    border-right: 1px solid black;
+    width: 50%;
     padding: 5px;
 }
-
-.header-box .first-box .img1 {
-    margin-right: 10px;
+.header-box .content1{
+padding: 0px 10px 0px 10px;
 }
 
 .header-box .second-box {
-    border-right: 1px solid black;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
     width: 50%;
-    height: 150px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -54,6 +53,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: 13%;
 }
 
 .header-box-1 .first-box-1 {
@@ -80,7 +80,7 @@
 
 .description-title .item-1 {
     padding: 5px;
-    width: 50px;
+    width: 6%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
@@ -89,7 +89,7 @@
 .description-title .item-2 {
     font-weight: 900;
     padding: 5px;
-    width: 400px;
+    width: 26%;
     padding-left: 10px;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
@@ -97,7 +97,7 @@
 
 .description-title .item-3 {
     padding: 5px;
-    width: 196px;
+    width: 18%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
@@ -105,7 +105,7 @@
 
 .description-title .item-4 {
     padding: 5px;
-    width: 150px;
+    width: 10%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
@@ -113,7 +113,7 @@
 
 .description-title .item-5 {
     padding: 5px;
-    width: 150px;
+    width: 10%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
@@ -121,7 +121,7 @@
 
 .description-title .item-6 {
     padding: 5px;
-    width: 150px;
+    width: 10%;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
     text-align: center;
@@ -129,7 +129,7 @@
 
 .description-title .item-7 {
     padding: 5px;
-    width: 197px;
+    width: 20%;
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
@@ -139,53 +139,53 @@
 .description-content {
     display: flex;
     width: 100%;
-    height: 500px;
+    height: 30%;
 }
 
 .description-content .item-1 {
-    width: 50px;
+    width: 6%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
 }
 
 .description-content .item-2 {
-    width: 400px;
+    width: 26%;
     padding-left: 10px;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
 }
 
 .description-content .item-3 {
-    width: 195px;
+    width: 18%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
 }
 
 .description-content .item-4 {
-    width: 150px;
+    width: 10%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
 }
 
 .description-content .item-5 {
-    width: 150px;
+    width: 10%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
 }
 
 .description-content .item-6 {
-    width: 150px;
+    width: 10%;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
     text-align: center;
 }
 
 .description-content .item-7 {
-    width: 197px;
+    width: 20%;
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
@@ -201,7 +201,7 @@
 
 .description-bottom .item-1 {
     padding: 16px 0px 16px 0px;
-    width: 50px;
+    width: 6%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
@@ -210,7 +210,7 @@
 .description-bottom .item-2 {
     font-weight: 900;
     padding: 5px;
-    width: 400px;
+    width: 26%;
     padding-left: 10px;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
@@ -218,7 +218,7 @@
 
 .description-bottom .item-3 {
     padding: 16px 0px 16px 0px;
-    width: 196px;
+    width: 18%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
@@ -226,7 +226,7 @@
 
 .description-bottom .item-4 {
     padding: 5px;
-    width: 150px;
+    width: 10%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
@@ -234,7 +234,7 @@
 
 .description-bottom .item-5 {
     padding: 16px 0px 16px 0px;
-    width: 150px;
+    width: 10%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
@@ -242,7 +242,7 @@
 
 .description-bottom .item-6 {
     padding: 5px;
-    width: 150px;
+    width: 10%;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
     text-align: center;
@@ -250,7 +250,7 @@
 
 .description-bottom .item-7 {
     padding: 5px;
-    width: 197px;
+    width: 20%;
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
@@ -265,7 +265,7 @@
 
 .description-bottom-1 .item-1 {
     padding: 16px 0px 16px 0px;
-    width: 50px;
+    width: 6%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
@@ -274,7 +274,7 @@
 .description-bottom-1 .item-2 {
     font-weight: 900;
     padding: 5px;
-    width: 400px;
+    width: 26%;
     padding-left: 10px;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
@@ -282,7 +282,7 @@
 
 .description-bottom-1 .item-3 {
     padding: 16px 0px 16px 0px;
-    width: 196px;
+    width: 18%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
@@ -290,7 +290,7 @@
 
 .description-bottom-1 .item-4 {
     padding: 16px 0px 16px 0px;
-    width: 150px;
+    width: 10%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
@@ -298,7 +298,7 @@
 
 .description-bottom-1 .item-5 {
     padding: 16px 0px 16px 0px;
-    width: 150px;
+    width: 10%;
     text-align: center;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
@@ -306,7 +306,7 @@
 
 .description-bottom-1 .item-6 {
     padding: 16px 0px 16px 0px;
-    width: 150px;
+    width: 10%;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
     text-align: center;
@@ -314,71 +314,7 @@
 
 .description-bottom-1 .item-7 {
     padding: 5px;
-    width: 197px;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    text-align: center;
-}
-
-.description-bottom-2 {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.description-bottom-2 .item-1 {
-    padding: 16px 0px 16px 0px;
-    width: 50px;
-    text-align: center;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-.description-bottom-2 .item-2 {
-    font-weight: 900;
-    padding: 5px;
-    width: 400px;
-    padding-left: 10px;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-.description-bottom-2 .item-3 {
-    padding: 16px 0px 16px 0px;
-    width: 196px;
-    text-align: center;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-.description-bottom-2 .item-4 {
-    padding: 16px 0px 16px 0px;
-    width: 150px;
-    text-align: center;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-.description-bottom-2 .item-5 {
-    padding: 16px 0px 16px 0px;
-    width: 150px;
-    text-align: center;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-.description-bottom-2 .item-6 {
-    padding: 16px 0px 16px 0px;
-    width: 150px;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    text-align: center;
-}
-
-.description-bottom-2 .item-7 {
-    padding: 5px;
-    width: 197px;
+    width: 20%;
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
@@ -386,120 +322,95 @@
 }
 
 .description-tax {
+    height: 5%;
     margin-top: 10px;
     display: flex;
     align-items: center;
     width: 100%;
     background-color: rgb(223, 223, 223);
+    border: 1px solid black;
 }
 
 .description-tax .item-1 {
-    height: 48px;
-    padding: 5px;
-    width: 250px;
+    padding: 10px 0px;
+    width: 25%;
+    border-right: 1px solid black;
     text-align: center;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
 }
 
 .description-tax .item-2 {
-    height: 48px;
-    font-weight: 900;
-    padding: 5px;
-    width: 250px;
-    padding-left: 10px;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
+    padding: 10px 0px;
+    width: 25%;
+    border-right: 1px solid black;
+    text-align: center;
 }
 
 .description-tax .item-3 {
-    /* padding: 5px; */
-    height: 48px;
-    width: 250px;
+    width: 25%;
+    border-right: 1px solid black;
     text-align: center;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
 }
 
 .description-tax .item-4 {
-    /* padding: 5px; */
-    width: 250px;
-    height: 48px;
+    width: 25%;
+    border-right: 1px solid black;
     text-align: center;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
 }
 
 .description-tax .item-5 {
-    padding: 5px;
-    height: 48px;
-    width: 260px;
+    padding: 5px 0px;
+    width: 25%;
     text-align: center;
-    border-left: 1px solid black;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
 }
 
 
 .description-tax-1 {
+    height: 20%;
     display: flex;
     align-items: center;
     width: 100%;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .description-tax-1 .item-1 {
-    height: 100px;
-    width: 250px;
+    border-right: 1px solid black;
+    width: 25%;
     text-align: center;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
 }
 
 .description-tax-1 .item-2 {
-    height: 100px;
-    font-weight: 900;
-    width: 250px;
-    padding-left: 10px;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    width: 25%;
+    text-align: center;
 }
 
 .description-tax-1 .item-3 {
     display: flex;
     justify-content: space-around;
-    height: 100px;
-    width: 250px;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
+    width: 25%;
+    border-right: 1px solid black;
 }
 
 .description-tax-1 .item-4 {
     display: flex;
     justify-content: space-around;
-    height: 100px;
-    width: 250px;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
+    width: 25%;
+    border-right: 1px solid black;
 }
 
 .description-tax-1 .item-5 {
-    height: 100px;
-    width: 260px;
+    width: 25%;
     text-align: center;
-    border-left: 1px solid black;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
+
 }
 
 .amt-word {
     margin-top: 10px;
     padding: 10px;
     border: 1px solid black;
+    height: 5%;
 }
 
 .sign {
@@ -507,15 +418,17 @@
     border-top: none;
     display: flex;
     align-items: center;
+    width: 100%;
+    height: 13%;
 }
 
 .sign-details {
-    width: 100%;
+    width: 70%;
 }
 
 .sign-name {
     display: flex;
-    width: 800px;
+    padding-top: 5px;
     border-right: 1px solid black;
 }
 
@@ -524,7 +437,8 @@
 }
 
 .sign-img {
-    width: 250px;
+    width: 30%;
+    text-align: center;
 }
 
 .button {
@@ -532,25 +446,28 @@
     margin: 20px 0px 0px 0px;
 }
 
-.head-tax{
+.head-tax {
     border-bottom: 1px solid black;
 }
-.head-tax-1{
+
+.head-tax-1 {
     display: flex;
-    /* align-items: center; */
     width: 100%;
-    height: 124px;
 }
 
-.rate-tax{
-    /* border-right: 1px solid black; */
+.rate-tax {
     width: 50%;
-    height: 100%;
+    /* height: 150px; */
 }
 
-.amt-tax{
+.amt-tax {
     border-left: 1px solid black;
     width: 50%;
-    height: 100%;
+}
+
+#words
+{
+    font-weight: 900;
+    font-size: 15px;
 }
 
