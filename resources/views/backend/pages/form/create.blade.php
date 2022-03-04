@@ -177,12 +177,9 @@
 
         // if()
         function myFunction2(selectObject){
-            // var productcolor = document.querySelector("#color");
-            // var productpaper = document.querySelector("#paper");
-            // console.log(productcolor);
-            // console.log(productpaper);
+
             var value = selectObject;
-            if(value.text == 'color'){
+            if(value.text == 'color' || value.text == 'Color' || value.text == 'Colour' ){
                 gsm.style.display = "block";
                 size.style.display = "block";
                 sheets.style.display = "block";

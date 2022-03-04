@@ -156,7 +156,7 @@
 
         </div>
         <div class="item-7" id="totres">
-            3186
+
         </div>
     </div>
     <div class="description-bottom-1">
@@ -374,18 +374,19 @@
 
             totTax = totTax + tot2;
             var tottax = document.querySelector("#tottax")
-            tottax.innerHTML = "Rs. " + totTax;
+            tottax.innerHTML = totTax;
 
             totRes = totRes + result;
             var totres = document.querySelector("#totres")
-            totres.innerHTML = "Rs. " + totRes;
+            totres.innerHTML = totRes;
 
             taxableVal.innerHTML = tot2;
             var finaltaxTot =
                 finalAmt = totRes - advpay;
             var finalamt = document.querySelector("#finalamt");
-            finalamt.innerHTML = "Rs. " + finalAmt;
-
+            finalamt.innerHTML = finalAmt;
+            console.log(totRes);
+            console.log(finalAmt);
 
         }
     }
@@ -414,7 +415,7 @@
     NumToWord();
 
     function NumToWord() {
-        var adpayval = document.querySelector('#advancepay');
+        var adpayval = document.querySelector('#totres');
         document.querySelector("#words").innerHTML = inWords(adpayval.innerText);
     }
 
