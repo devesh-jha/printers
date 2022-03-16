@@ -70,20 +70,7 @@
                                     parsley-type="email" placeholder="Enter Total Bundle"/>
                         </div>
                     </div>
-                    <div class="mb-3" id="price">
-                        <label>Total Price</label>
-                        <div>
-                            <input type="text" class="form-control" name="price"
-                                    parsley-type="email" placeholder="Enter Price"/>
-                        </div>
-                    </div>
-                    <div class="mb-3" id="amount_given">
-                        <label>Amount Given</label>
-                        <div>
-                            <input type="text" class="form-control" name="amount_given"
-                                    parsley-type="email" placeholder="Enter Total amount Given"/>
-                        </div>
-                    </div>
+
                     <div class="mb-3" id="count">
                         <label>Total Count</label>
                         <div>
@@ -103,6 +90,20 @@
                         <div>
                             <input type="text" class="form-control" name="thickness"
                                     parsley-type="email" placeholder="Enter Thickness"/>
+                        </div>
+                    </div>
+                     <div class="mb-3" id="price">
+                        <label>Total Price</label>
+                        <div>
+                            <input type="text" class="form-control" name="price"
+                                    parsley-type="email" placeholder="Enter Price"/>
+                        </div>
+                    </div>
+                    <div class="mb-3" id="amount_given">
+                        <label>Amount Given</label>
+                        <div>
+                            <input type="text" class="form-control" name="amount_given"
+                                    parsley-type="email" placeholder="Enter Total amount Given"/>
                         </div>
                     </div>
 
@@ -180,6 +181,18 @@
 
             var value = selectObject;
             if(value.text == 'color' || value.text == 'Color' || value.text == 'Colour' ){
+                gsm.style.display = "none";
+                size.style.display = "none";
+                sheets.style.display = "none";
+                rfbundle.style.display = "none";
+                bundle.style.display = "none";
+                price.style.display = "block";
+                amount_given.style.display = "block";
+                count.style.display = "block";
+                wt_per_box.style.display = "block";
+                thickness.style.display = "none";
+            }
+            else if(value.text == 'Paper' || value.text == 'paper' || value.text == 'papers'){
                 gsm.style.display = "block";
                 size.style.display = "block";
                 sheets.style.display = "block";
@@ -187,21 +200,69 @@
                 bundle.style.display = "block";
                 price.style.display = "block";
                 amount_given.style.display = "block";
+                count.style.display = "none";
+                wt_per_box.style.display = "none";
+                thickness.style.display = "none";
+            }
+            else if(value.text == 'Lamination Role'|| value.text == 'lamination role'){
+                gsm.style.display = "none";
+                size.style.display = "none";
+                sheets.style.display = "none";
+                rfbundle.style.display = "none";
+                bundle.style.display = "none";
+                price.style.display = "block";
+                amount_given.style.display = "block";
                 count.style.display = "block";
-                wt_per_box.style.display = "block";
+                wt_per_box.style.display = "none";
                 thickness.style.display = "block";
             }
-            else if(value.text == 'paper'){
-                gsm.style.display = "block";
+            else if(value.text == 'punch'|| value.text == 'Punch'){
+                gsm.style.display = "none";
                 size.style.display = "block";
-                sheets.style.display = "block";
-                rfbundle.style.display = "block";
-                bundle.style.display = "block";
+                sheets.style.display = "none";
+                rfbundle.style.display = "none";
+                bundle.style.display = "none";
+                price.style.display = "block";
+                amount_given.style.display = "block";
+                count.style.display = "block";
+                wt_per_box.style.display = "none";
+                thickness.style.display = "none";
+            }
+            else if(value.text == 'ctp'|| value.text == 'CTP'){
+                gsm.style.display = "none";
+                size.style.display = "block";
+                sheets.style.display = "none";
+                rfbundle.style.display = "none";
+                bundle.style.display = "none";
+                price.style.display = "block";
+                amount_given.style.display = "block";
+                count.style.display = "block";
+                wt_per_box.style.display = "none";
+                thickness.style.display = "none";
+            }
+            else if(value.text == 'Gum'|| value.text == 'fevicall'){
+                gsm.style.display = "none";
+                size.style.display = "none";
+                sheets.style.display = "none";
+                rfbundle.style.display = "none";
+                bundle.style.display = "none";
                 price.style.display = "block";
                 amount_given.style.display = "block";
                 count.style.display = "block";
                 wt_per_box.style.display = "block";
-                thickness.style.display = "block";
+                thickness.style.display = "none";
+            }
+            else if(value.text == 'other'|| value.text == 'others' || value.text == 'Others' || value.text == 'others'){
+                gsm.style.display = "none";
+                size.style.display = "none";
+                sheets.style.display = "none";
+                rfbundle.style.display = "none";
+                bundle.style.display = "none";
+                price.style.display = "block";
+                amount_given.style.display = "block";
+                count.style.display = "block";
+                wt_per_box.style.display = "block";
+                thickness.style.display = "none";
             }
         }
 
