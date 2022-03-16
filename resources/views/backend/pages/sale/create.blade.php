@@ -55,6 +55,16 @@
                                 id="example-text-input" name="date" required>
                         </div>
                     </div>
+                    <div class="row mb-3">
+                        <label for="example-text-input" class="col-sm-2 col-form-label">GST Yes/No</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" type="date" placeholder="Enter Customer Name"
+                                id="gst-sel" required>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="row mb-3">
                         <div class="d-flex">
@@ -65,7 +75,7 @@
                                     style="margin-bottom:10px">Add New Item</button>
                             </div>
                         </div>
-                        <div style="display:grid; grid-template-columns:repeat(5,250px); justify-content:space-between "
+                        <div style="display:grid; grid-template-columns:repeat(5,250px); justify-content:space-between " id="myMainId"
                             class="input_fields_wrap">
                             <style>
                                 .my-input {
@@ -95,8 +105,8 @@
                                     placeholder="rate" required>
                             </div>
                             <div class="col-sm-2">
-                                <input type="text" class="my-input" name="tax[]" id="example-text-input"
-                                    placeholder="tax" required>
+                                <input type="text" class="my-input" name="tax[]" id="tax-input"
+                                    placeholder="tax" >
                             </div>
 
                         </div>
@@ -116,13 +126,34 @@
 @section('scripts')
 <script type="text/javascript">
     $(document).ready(function () {
+        $("#gst-sel").trigger("change");
+        var gstCheck = "yes";
+        var gstCheck = $("#gst-sel").change(function() {
+            if ($("#gst-sel").val() == "yes") {
+            return $("#gst-sel").val();
+            } else {
+                var gstTaxIn = document.querySelector("#tax-input");
+                gstTaxIn.style.display = "none";
+                // var mainClass = document.querySelector(".input_fields_wrap");
+                // $("#myMainId").removeAttr('style');
+                // mainClass.style.display = "grid";
+                // mainClass.style.gridTemplateColumns = "repeat(4,250px)";
+                // mainClass.style.justifyContent = "space-between";
+                return $("#gst-sel").val();
+            }
+        });
+
+
         var wrapper = $(".input_fields_wrap"); //Fields wrapper
         var add_button = $("#add_field_button"); //Add button ID
 
         $(add_button).click(function (e) { //on add input button click
             e.preventDefault();
             //add input box
-            var template = `
+            console.log(gstCheck);
+            console.log($("#gst-sel").val());
+            if ($("#gst-sel").val() == "yes") {
+                var template = `
                                 <div class="col-sm-2">
                                     <input type="text" class="my-input" name="items[]" id="example-text-input"
                                         placeholder="item" required>
@@ -144,10 +175,38 @@
                                         placeholder="tax" required>
                                 </div>
             `;
+            }else{
+                var template = `
+                <div class="col-sm-2">
+                                    <input type="text" class="my-input" name="items[]" id="example-text-input"
+                                        placeholder="item" required>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="my-input" name="hsn[]" id="example-text-input"
+                                        placeholder="hsn" required>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="my-input" name="quantity[]" id="example-text-input"
+                                        placeholder="quantity" required>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="my-input" name="rate[]" id="example-text-input"
+                                        placeholder="rate" required>
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" class="my-input" name="tax[]" id="example-text-input"
+                                        placeholder="tax" hidden>
+                                </div>
+
+                `;
+            }
+
             $(wrapper).append(template);
 
         });
     });
+
+
 
 </script>
 @endsection

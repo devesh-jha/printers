@@ -38,24 +38,16 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        Log::info("start");
 
         $myarr['items'] = $request->items;
         $myarr['hsn'] = $request->hsn;
         $myarr['quantity'] = $request->quantity;
         $myarr['rate'] = $request->rate;
         $myarr['tax'] = $request->tax;
-        Log::info("arrmerged");
 
         $data = json_encode($myarr);
-        // $data1 = json_decode($data);
-        // Log::info($data);
 
-        // $data1 = json_decode($data);
 
-        // Log::info($data1);
-
-        Log::info("start saving");
         $sale = new Sale();
         $sale->name = $request->name;
         $sale->contact = $request->contact;
@@ -63,13 +55,12 @@ class SaleController extends Controller
         $sale->gstno = $request->gstno;
         $sale->advancepay = $request->advancepay;
         $sale->date = $request->date;
-        Log::info("array element");
+
 
         $sale->description = $data;
-        Log::info("arry element end");
 
         $sale->save();
-        Log::info("saved");
+
 
         // $sale = Sale::create([
         //     'name' => $request->name,
@@ -135,7 +126,6 @@ class SaleController extends Controller
             $desc = $item->description;
         }
         $deco = json_decode($desc, true);
-        Log::info($deco);
         return view('backend.pages.sale.invoice',compact(['sale','deco']));
     }
 

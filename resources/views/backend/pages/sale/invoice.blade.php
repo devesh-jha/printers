@@ -87,10 +87,10 @@
         <div class="item-5">
             Rate
         </div>
-        <div class="item-6">
+        <div class="item-6" id="tottax-box">
             TAX
         </div>
-        <div class="item-7">
+        <div class="item-7" id="last-box-1">
             Amount
         </div>
     </div>
@@ -123,137 +123,136 @@
             </div>
             @endforeach
         </div>
-        <div class="item-6">
+        <div class="item-6" id="tax-box-rem">
             @foreach ($deco['tax'] as $item => $value)
             <div id="cal-tax-{{$item}}">
                 {{$value}}
             </div>
             @endforeach
         </div>
-        <div class="item-7">
+        <div class="item-7" id="last-box-2">
             @for($i = 0; $i<50; $i++) <div id="cal-amt-{{$i}}">
-                </div>
-                @endfor
+        </div>
+        @endfor
+    </div>
+</div>
+<div class="description-bottom">
+    <div class="item-1">
+
+    </div>
+    <div class="item-2">
+        Total Amount
+    </div>
+    <div class="item-3">
+
+    </div>
+    <div class="item-4" id="totqty">
+
+    </div>
+    <div class="item-5">
+
+    </div>
+    <div class="item-6" id="tottax">
+
+    </div>
+    <div class="item-7 last-box-3" id="totres" >
+
+    </div>
+</div>
+<div class="description-bottom-1">
+    <div class="item-1">
+
+    </div>
+    <div class="item-2">
+        Received Amount
+    </div>
+    <div class="item-3">
+
+    </div>
+    <div class="item-4">
+
+    </div>
+    <div class="item-5">
+
+    </div>
+    <div class="item-6" id="tax-box-2">
+
+    </div>
+    <div class="item-7 last-box-4" id="advancepay">
+        {{$sale->advancepay}}
+    </div>
+</div>
+<div class="description-bottom-1">
+    <div class="item-1">
+
+    </div>
+    <div class="item-2">
+        Balance Amount
+    </div>
+    <div class="item-3">
+
+    </div>
+    <div class="item-4">
+
+    </div>
+    <div class="item-5">
+
+    </div>
+    <div class="item-6" id="tax-box-1">
+
+    </div>
+    <div class="item-7 last-box-5" id="finalamt">
+
+    </div>
+</div>
+<div class="description-tax">
+    <div class="item-1">
+        HSN/SAC
+    </div>
+    <div class="item-2">
+        Taxable Value
+    </div>
+    <div class="item-3">
+        <div class="head-tax">CGST</div>
+        <div class="head-tax-1">
+            <div class="rate-tax">Rate</div>
+            <div class="amt-tax">Amount</div>
         </div>
     </div>
-    <div class="description-bottom">
-        <div class="item-1">
-
-        </div>
-        <div class="item-2">
-            Total Amount
-        </div>
-        <div class="item-3">
-
-        </div>
-        <div class="item-4" id="totqty">
-
-        </div>
-        <div class="item-5">
-
-        </div>
-        <div class="item-6" id="tottax">
-
-        </div>
-        <div class="item-7" id="totres">
-
+    <div class="item-4">
+        <div class="head-tax">SGST</div>
+        <div class="head-tax-1">
+            <div class="rate-tax">Rate</div>
+            <div class="amt-tax">Amount</div>
         </div>
     </div>
-    <div class="description-bottom-1">
-        <div class="item-1">
-
-        </div>
-        <div class="item-2">
-            Received Amount
-        </div>
-        <div class="item-3">
-
-        </div>
-        <div class="item-4">
-
-        </div>
-        <div class="item-5">
-
-        </div>
-        <div class="item-6">
-
-        </div>
-        <div class="item-7" id="advancepay">
-            {{$sale->advancepay}}
-        </div>
+    <div class="item-5">
+        Total Tax Amount
     </div>
-    <div class="description-bottom-1">
-        <div class="item-1">
-
-        </div>
-        <div class="item-2">
-            Balance Amount
-        </div>
-        <div class="item-3">
-
-        </div>
-        <div class="item-4">
-
-        </div>
-        <div class="item-5">
-
-        </div>
-        <div class="item-6">
-
-        </div>
-        <div class="item-7" id="finalamt">
-
-        </div>
+</div>
+<div class="description-tax-1">
+    <div class="item-1">
+        @foreach ($deco['hsn'] as $item)
+        {{$item}}<br>
+        @endforeach
     </div>
-    <div class="description-tax">
-        <div class="item-1">
-            HSN/SAC
-        </div>
-        <div class="item-2">
-            Taxable Value
-        </div>
-        <div class="item-3">
-            <div class="head-tax">CGST</div>
-            <div class="head-tax-1">
-                <div class="rate-tax">Rate</div>
-                <div class="amt-tax">Amount</div>
-            </div>
-        </div>
-        <div class="item-4">
-            <div class="head-tax">SGST</div>
-            <div class="head-tax-1">
-                <div class="rate-tax">Rate</div>
-                <div class="amt-tax">Amount</div>
-            </div>
-        </div>
-        <div class="item-5">
-            Total Tax Amount
-        </div>
+    <div class="item-2">
+        @for($i = 0; $i<30; $i++) <div id="cal-amt-1-{{$i}}">
     </div>
-    <div class="description-tax-1">
-        <div class="item-1">
-            @foreach ($deco['hsn'] as $item)
-            {{$item}}<br>
-            @endforeach
-        </div>
-        <div class="item-2">
-            @for($i = 0; $i<30; $i++) {{-- @if() --}} <div id="cal-amt-1-{{$i}}">
-                </div>
-                {{-- @endif --}}
-                @endfor
-        </div>
-        <div class="item-3">
-            <div class="head-tax-2">
-                @for($i = 0; $i<20; $i++) <div id="rate-tax-1-{{$i}}">
-            </div>
-            @endfor
-        </div>
-        <div class="head-tax-2">
-            @for($i = 0; $i<20; $i++) <div id="amt-tax-1-{{$i}}">
-            </div>
-            @endfor
-        </div>
+    @endfor
+</div>
+<div class="item-3">
+    <div class="head-tax-2">
+        @for($i = 0; $i<20; $i++) <div id="rate-tax-1-{{$i}}">
     </div>
+    @endfor
+</div>
+<div class="head-tax-2">
+    @for($i = 0; $i<20; $i++) <div id="amt-tax-1-{{$i}}">
+</div>
+@endfor
+</div>
+</div>
 <div class="item-4">
     <div class="head-tax-2">
         @for($i = 0; $i<50; $i++) <div id="rate-tax-2-{{$i}}">
@@ -315,11 +314,10 @@
 <script>
     function printDiv(invoice) {
         var divContents = document.getElementById(invoice).innerHTML;
-        let printBtn = document.querySelector("#printbtn");
-        console.log(printBtn);
+        var printBtn = document.querySelector("#printbtn");
         var originalContents = document.body.innerHTML;
         document.body.innerHTML = divContents;
-        printBtn.style.display="none";
+        printBtn.style.display = "none";
         window.print();
         document.body.innerHTML = originalContents;
     }
@@ -387,7 +385,26 @@
             finalamt.innerHTML = finalAmt;
             console.log(totRes);
             console.log(finalAmt);
+            console.log(totTax);
+            if(totTax == "0"){
+                document.querySelector(".description-tax").style.display = "none";
+                document.querySelector(".description-tax-1").style.display = "none";
+                document.querySelector("#tottax").style.display = "none";
+                document.querySelector("#tottax-box").style.display = "none";
+                document.querySelector("#tax-box-rem").style.display = "none";
+                document.querySelector("#tax-box-1").style.display = "none";
+                document.querySelector("#tax-box-2").style.display = "none";
 
+                document.querySelector("#last-box-1").style.width = "30%";
+                document.querySelector("#last-box-2").style.width = "30%";
+                document.querySelector(".last-box-3").style.width = "30%";
+                document.querySelector(".last-box-4").style.width = "30%";
+                document.querySelector(".last-box-5").style.width = "30%";
+
+
+
+
+            }
         }
     }
 
@@ -416,7 +433,7 @@
 
     function NumToWord() {
         var adpayval = document.querySelector('#totres');
-        document.querySelector("#words").innerHTML = inWords(adpayval.innerText);
+        document.querySelector("#words").innerText = inWords(adpayval.innerText);
     }
 
 </script>
