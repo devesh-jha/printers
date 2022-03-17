@@ -38,7 +38,7 @@
                         <label for="example-text-input" class="col-sm-2 col-form-label">GST Number</label>
                         <div class="col-sm-10">
                             <input class="form-control" type="text" placeholder="Enter Customer's GST No.'"
-                                id="example-text-input" name="gstno" required>
+                                id="example-text-input" name="gstno" >
                         </div>
                     </div>
                     <div class="row mb-3">
