@@ -305,7 +305,7 @@
     </div>
 </div>
 <div class="button" id="printbtn">
-    <button class="btn btn-success" type="submit" onclick="printDiv('invoice')">Print</button>
+    <button class="btn btn-success" type="submit" id="abc"  onclick="printDiv('invoice')">Print</button>
 </div>
 </div>
 @endsection
@@ -318,6 +318,7 @@
         var originalContents = document.body.innerHTML;
         document.body.innerHTML = divContents;
         printBtn.style.display = "none";
+        $('#abc').hide();
         window.print();
         document.body.innerHTML = originalContents;
     }

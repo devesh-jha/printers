@@ -8,6 +8,8 @@ use App\Http\Controllers\Backend\IncomeController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SaleController;
 use App\Http\Controllers\Backend\VendorController;
+use App\Models\Expense;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +28,8 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
+
+
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
