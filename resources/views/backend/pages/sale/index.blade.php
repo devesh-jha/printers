@@ -34,15 +34,19 @@
                        @foreach ($sale as $item)
                        <tr>
                            <td>{{$item->id}}</td>
+                           <td class="d-flex">
+                            <a href="{{route('sale.view',[$item])}}" class="btn btn-secondary">View invoice</a>
+                            <a href="{{route('sale.edit',[$item->id])}}" class="btn btn-secondary">Edit</a>
+                            <form action="{{ route('sale.destroy',[$item->id])}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                            <button  type="submit" class="btn btn-danger"   >Delete</button>
+                                            </form>
+                        </td>
                         <td>{{$item->name}}</td>
                         <td>{{$item->address}}</td>
                         <td>{{$item->contact}}</td>
-                        <td>
-                            <a href="{{route('sale.view',[$item])}}" class="btn btn-secondary">View invoice</a>
-                            <a href="{{route('sale.edit',[$item->id])}}" class="btn btn-secondary">Edit</a>
-                            <a href="{{route('sale.destroy',[$item->id])}}" class="btn btn-danger">Delete</a>
-
-                        </td>
+                       
 
                     </tr>
                        @endforeach
