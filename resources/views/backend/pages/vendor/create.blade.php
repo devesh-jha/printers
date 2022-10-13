@@ -25,7 +25,7 @@
                         <div class="mb-3 position-relative">
                             <label for="validationTooltip01" class="form-label">Phone Number</label>
                             <input type="number" class="form-control" id="validationTooltip01"
-                                placeholder="First name" name="contact" required>
+                                placeholder="Number" name="contact" required>
                             <div class="valid-tooltip">
                                 Looks good!
                             </div>
@@ -35,7 +35,7 @@
                         <div class="mb-3 position-relative">
                             <label for="validationTooltip02" class="form-label">Address</label>
                             <textarea type="text" class="form-control" id="validationTooltip02"
-                                placeholder="Last name" name="address" required>
+                                placeholder="Number" name="address" required>
                             </textarea>
                             <div class="valid-tooltip">
                                 Looks good!

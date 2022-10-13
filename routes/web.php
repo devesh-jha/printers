@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\IncomeController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SaleController;
 use App\Http\Controllers\Backend\VendorController;
+use App\Http\Controllers\Backend\LedgerController;
 use App\Models\Expense;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
@@ -45,5 +46,8 @@ Route::resource('income',IncomeController::class);
 Route::resource('employee',EmployeeController::class);
 Route::resource('empsalary',EmpsalaryController::class);
 Route::resource('sale',SaleController::class);
+Route::resource('ledger',LedgerController::class);
 
 Route::get('invoice/{sale:id}', [SaleController::class,'viewInvoice'])->name('sale.view');
+Route::get('ledger/view/{id}',[LedgerController::class,'view'])->name('ledger.view');
+

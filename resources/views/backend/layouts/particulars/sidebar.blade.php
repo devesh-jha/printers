@@ -59,6 +59,12 @@
                 <span>Sale</span>
             </a>
         </li>
+        <li>
+            <a href="{{route('ledger.index')}}" class=" waves-effect">
+                <i class=" ri-shopping-cart-fill" ></i>
+                <span>Ledger Entries</span>
+            </a>
+        </li>
 
 
 
