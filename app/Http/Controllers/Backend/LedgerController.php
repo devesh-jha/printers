@@ -45,13 +45,22 @@ class LedgerController extends Controller
 
        
         $lastData = Ledger::where('vendor_id','=',$request->vendor_id)->get()->last();
-       if (is_null($lastData)) {
-        $request->balance=0;
-       } else {
-        $lastData = Ledger::where('vendor_id','=',$request->vendor_id)->get()->last();
-       }
        
+       Log::info($lastData);
+       if (empty($lastData)) {
+        $balance=$request->credit-$request->debit;
+        $ledger = Ledger::create([
+            'date' => $request->date,
+            'vendor_id' => $request->vendor_id,
+            'particulars' => $request->particulars,
+            'credit' => $request->credit,
+            'debit' => $request->debit,
+            'balance' => $balance,
+        ]);
+        return redirect()->route('ledger.index')->with('Success',"New Record added Successfully");    
 
+
+       }
         $balance = $lastData->balance;
 
         

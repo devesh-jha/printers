@@ -49,6 +49,7 @@ class SaleController extends Controller
 
 
         $sale = new Sale();
+        $sale->invoiceid = $request->invoiceid;
         $sale->name = $request->name;
         $sale->contact = $request->contact;
         $sale->address = $request->address;
@@ -105,7 +106,25 @@ class SaleController extends Controller
      */
     public function update(Request $request, Sale $sale)
     {
-        $sale->update($request->all());
+
+        $myarr['items'] = $request->items;
+        $myarr['hsn'] = $request->hsn;
+        $myarr['quantity'] = $request->quantity;
+        $myarr['rate'] = $request->rate;
+        $myarr['tax'] = $request->tax;
+
+        $data = json_encode($myarr);
+
+        $sale->update([
+            'name' => $request->name,
+            'contact' => $request->contact,
+            'address' => $request->address,
+            'gstno' => $request->gstno,
+            'advancepay' => $request->advancepay,
+            'date' => $request->date,
+            'description' => $data,
+            'invoiceid' => $request->invoiceid,
+        ]);
         return redirect()->route('sale.index')->with('success',"Product added Successfully");
     }
 

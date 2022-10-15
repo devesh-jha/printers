@@ -33,7 +33,7 @@
             <div class="invoice-no">
                 <h6>Invoice No</h6>
                 <h6>
-                    SP/{{$sale->id}}
+                    SP/{{$sale->invoiceid}}
                 </h6>
             </div>
             <div class="invoice-date">

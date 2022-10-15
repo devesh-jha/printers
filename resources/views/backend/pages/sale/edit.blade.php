@@ -11,8 +11,15 @@
 
             <form action="{{route('sale.update',[$sale->id])}}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="row">
-
+                <div class="row mb-3">
+                        <label for="example-text-input" class="col-sm-2 col-form-label">Enter Invoice ID</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text" placeholder="Enter Invoice ID"
+                                 name="invoiceid" required>
+                        </div>
+                    </div>
 
                     <div class="row mb-3">
                         <label for="example-text-input" class="col-sm-2 col-form-label">Enter Customer Name</label>
