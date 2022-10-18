@@ -15,17 +15,17 @@
     {{-- header of logo --}}
     <div class="header-box">
         <div class="first-box">
-            <div class="img1">
+            <!-- <div class="img1">
                 <img src="{{asset('assets/images/printers.jpg')}}" width="120px" height="120px" alt="">
-            </div>
-            <div class="content1">
-                <h4>SIDDHI PRINTERS</h4>
-                <p>Gala No.1, Ishwar Nagar,Khair Pada,Virar Phata,
-                    Virar(East), Tal.Vasai, Dist:-Palghar
-                    Email:siddhi778printers@gmail.com
+            </div> -->
+            <div style="font-weight:bold" class="content1">
+                <h1 >MS Enterprise</h1>
+                <p>Gala No.2, Ishwar Nagar,Khair Pada,Nr. Bus Stop,
+                    Virar Phata,Virar(E),Tal. Vasai, Dist. Palghar
+                    Email:ranjeethja2111@gmail.com
                     Contact:9323999491/7020982682
                     <br>
-                    GSTIN:27AFYPJ5944D2ZY
+                    GSTIN:27BSDPJ4781M1Z8
                 </p>
             </div>
         </div>
@@ -299,7 +299,7 @@
         </div>
     </div>
     <div class="sign-img">
-        <img src="{{asset('assets/images/sign.jpeg')}}" width="150" alt="">
+        <img src="{{asset('assets/images/ranjit.jpeg')}}" width="150" alt="">
         <h6>Autherised Signature for
             <br> Siddhi Printers</h6>
     </div>
@@ -312,6 +312,7 @@
 
 @section('scripts')
 <script>
+
     function printDiv(invoice) {
         var divContents = document.getElementById(invoice).innerHTML;
         var printBtn = document.querySelector("#printbtn");

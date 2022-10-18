@@ -5,7 +5,8 @@
             <div class="navbar-brand-box">
                 <a href="{{route('dashboard')}}" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-sm-dark.png" alt="logo-sm-dark" height="22">
+                    <h1>M. S. Enterprises</h1>
+                    <!-- <img src="assets/images/logo-sm-dark.png" alt="logo-sm-dark" height="22"> -->
                     </span>
                     <span class="logo-lg">
                         <img src="assets/images/printers.jpg" alt="logo-dark" height="20">
@@ -18,7 +19,7 @@
                         <img src="assets/images/logo-sm-light.png" alt="logo-sm-light" height="22">
                     </span>
                     <span class="logo-lg">
-                        <h3 style="color: orange; font">Siddhi Printers</h3>
+                        <h3 style="color: orange; font">M. S. Enterprises</h3>
                         {{-- <img src="assets/images/printers.jpg" alt="logo-light" style="margin-top: 30px; margin-left: 30px; " height="90"> --}}
                     </span>
                 </a>

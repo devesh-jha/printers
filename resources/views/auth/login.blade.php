@@ -2,8 +2,8 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <img src="assets/images/printers.jpg" alt="logo-dark"  width="250px">
-
+                <!-- <img src="assets/images/printers.jpg" alt="logo-dark"  width="250px"> -->
+<h1>M. S. Enterprises</h1>
             </a>
         </x-slot>
 
